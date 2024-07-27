@@ -31,10 +31,10 @@
   
   <entry>
     <title></title>
-    <link href="/2024/07/27/Placement%20new%20operator%20in%20C++/"/>
-    <url>/2024/07/27/Placement%20new%20operator%20in%20C++/</url>
+    <link href="/2024/07/27/CMake/"/>
+    <url>/2024/07/27/CMake/</url>
     
-    <content type="html"><![CDATA[<p><a href="https://www.geeksforgeeks.org/placement-new-operator-cpp/">https://www.geeksforgeeks.org/placement-new-operator-cpp/</a></p>]]></content>
+    <content type="html"><![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">pip install cmake==23232 <span class="hljs-comment"># Check av version</span><br>pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --trusted-host pypi.tuna.tsinghua.edu.cn module<br></code></pre></td></tr></table></figure><p>cmake -S .&#x2F; -B .&#x2F;build&#x2F;<br>cmake –build .&#x2F;build&#x2F; -j8</p>]]></content>
     
     
     
@@ -44,10 +44,10 @@
   
   <entry>
     <title></title>
-    <link href="/2024/07/27/CMake/"/>
-    <url>/2024/07/27/CMake/</url>
+    <link href="/2024/07/27/Placement%20new%20operator%20in%20C++/"/>
+    <url>/2024/07/27/Placement%20new%20operator%20in%20C++/</url>
     
-    <content type="html"><![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">pip install cmake==23232 <span class="hljs-comment"># Check av version</span><br>pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --trusted-host pypi.tuna.tsinghua.edu.cn module<br></code></pre></td></tr></table></figure><p>cmake -S .&#x2F; -B .&#x2F;build&#x2F;<br>cmake –build .&#x2F;build&#x2F; -j8</p>]]></content>
+    <content type="html"><![CDATA[<p><a href="https://www.geeksforgeeks.org/placement-new-operator-cpp/">https://www.geeksforgeeks.org/placement-new-operator-cpp/</a></p>]]></content>
     
     
     

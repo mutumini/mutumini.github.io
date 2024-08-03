@@ -5,12 +5,63 @@
   
   <entry>
     <title></title>
-    <link href="/2024/07/27/Docker/"/>
-    <url>/2024/07/27/Docker/</url>
+    <link href="/2024/08/03/software/detail/Linux/"/>
+    <url>/2024/08/03/software/detail/Linux/</url>
     
-    <content type="html"><![CDATA[<h3 id="Install-docker-engine"><a href="#Install-docker-engine" class="headerlink" title="Install docker engine"></a><a href="https://docs.docker.com/engine/install/ubuntu/">Install docker engine</a></h3><h3 id="Manage-docker-as-a-non-root-user"><a href="#Manage-docker-as-a-non-root-user" class="headerlink" title="Manage docker as a non-root user"></a><a href="https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user">Manage docker as a non-root user</a></h3><ol><li><a href="https://ruanyifeng.com/blog/2018/02/docker-tutorial.html">https://ruanyifeng.com/blog/2018/02/docker-tutorial.html</a></li></ol><p>Docker is an open-source engine that automates the deployment of applications into containers.<br>Docker is designed to enhance consistency by ensuring the environment in which your developers write code matches the environments into which your applications are deployed.</p><p>Docker components</p><ul><li>The Docker client and server (Docker Engine)</li><li>Docker Images</li><li>Registries</li><li>Docker Containers<br>![[Pasted image 20240418145113.png]]</li></ul><p>A Docker container is:</p><ul><li>An image format</li><li>A set of standard operations</li><li>An execution environment</li></ul><p>Ensuring Docker is ready: <code>sudo docker info</code></p><p>Interactive container<br>Create new containers: <code>sudo docker run --name docker_name -i -t ubuntu /bin/bash</code></p><ul><li>You can use <code>--name</code> flag to name the container, in this case name the container <code>docker_name</code></li><li><code>-i</code> flag keeps STDIN open from the container</li><li><code>-t</code> tells Docker to assign a pseudo-tty to the container</li><li><code>ubuntu</code> is the image to use to create a container</li><li>We should tell Docker which command to run in our new container, in this case launching a Bash shell with the <code>/bin/bash</code> command<br><code>docker ps -a</code> show our a list of current containers.<br>When you’re done, type <code>exit</code>, and you’ll return to the command prompt of your host.<br>We can restart a stopped container liker so: <code>sudo docker start docker_name</code><br><code>docker attach docker_name</code>: You can check <em>&lt;\The Docker Book (James Turnbull): Chapter 3 - Attaching to a container&gt;</em></li></ul><p>Daemonized container</p><p>Listing Docker images <code>sudo docker images</code><br>Pulling the Docker images <code>sudo docker pull image_name:tag</code><br>Searching for images <code>sudo docker search image_name</code></p>]]></content>
+    <content type="html"><![CDATA[<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">hostname -I<br>netstat -lnt<br></code></pre></td></tr></table></figure>]]></content>
     
     
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2024/08/03/software/detail/Jenkins/"/>
+    <url>/2024/08/03/software/detail/Jenkins/</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://hub.docker.com/r/jenkins/jenkins">Downloading and running Jenkins in Docker</a></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2024/08/03/software/detail/docker/docker-compose/"/>
+    <url>/2024/08/03/software/detail/docker/docker-compose/</url>
+    
+    <content type="html"><![CDATA[{"version":"3","services":{"jenkins":{"container_name":"jenkins","image":"hub.uuuadc.top/jenkins/jenkins","ports":["8080:8080"],"volumes":["$PWD/jenkins_home:/var/jenkins_home"],"networks":["net"]}},"networks":{"net":null}}]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Docker Compose</title>
+    <link href="/2024/07/29/software/detail/docker/Docker%20compose/"/>
+    <url>/2024/07/29/software/detail/docker/Docker%20compose/</url>
+    
+    <content type="html"><![CDATA[<p>docker compose install</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>software</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>software/Docker</tag>
+      
+    </tags>
     
   </entry>
   
@@ -30,63 +81,11 @@
   
   
   <entry>
-    <title></title>
-    <link href="/2024/07/27/CMake/"/>
-    <url>/2024/07/27/CMake/</url>
+    <title>Hello World</title>
+    <link href="/2024/07/27/hello-world/"/>
+    <url>/2024/07/27/hello-world/</url>
     
-    <content type="html"><![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">pip install cmake==23232 <span class="hljs-comment"># Check av version</span><br>pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --trusted-host pypi.tuna.tsinghua.edu.cn module<br></code></pre></td></tr></table></figure><p>cmake -S .&#x2F; -B .&#x2F;build&#x2F;<br>cmake –build .&#x2F;build&#x2F; -j8</p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
-    <link href="/2024/07/27/Placement%20new%20operator%20in%20C++/"/>
-    <url>/2024/07/27/Placement%20new%20operator%20in%20C++/</url>
-    
-    <content type="html"><![CDATA[<p><a href="https://www.geeksforgeeks.org/placement-new-operator-cpp/">https://www.geeksforgeeks.org/placement-new-operator-cpp/</a></p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
-    <link href="/2024/07/27/Reflection%20System/"/>
-    <url>/2024/07/27/Reflection%20System/</url>
-    
-    <content type="html"><![CDATA[<p>Reference:</p><ol><li><a href="https://preshing.com/20180116/a-primitive-reflection-system-in-cpp-part-1/">A Flexible Reflection System in C++: Part 1</a></li></ol>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
-    <link href="/2024/07/27/Unified%20Modeling%20Language%20(UML)/"/>
-    <url>/2024/07/27/Unified%20Modeling%20Language%20(UML)/</url>
-    
-    <content type="html"><![CDATA[<h2 id="Class-Diagram"><a href="#Class-Diagram" class="headerlink" title="Class Diagram"></a>Class Diagram</h2><p>Class diagrams are used to visually represent the structure and relationships of classes within a system.</p><blockquote><p>[!TIP]<br>Classes are depicted as boxes, each containing three compartments for the class name, attributes, and methods. Lines connecting classes illustrate associations, showing relationships such as ont-to-one or one-to-many.</p></blockquote><h3 id="UML-Class-Notation"><a href="#UML-Class-Notation" class="headerlink" title="UML Class Notation"></a>UML Class Notation</h3><p>![[Pasted image 20240507104339.png]]</p><p><strong>Visibility notation</strong> indicate the access level of attributes and methods. Common visibility notations include:</p><ul><li>+ for public</li><li>- for private</li><li># for protected</li></ul><p><strong>Parameter directionality</strong> refers to the indication of the flow of information between classes through method parameters. There are three main parameter directionality notations used in class diagrams:</p><ul><li>In(Input)</li><li>Out(Output)</li><li>InOut(Input and Output)</li></ul><h3 id="Relationships-between-classes"><a href="#Relationships-between-classes" class="headerlink" title="Relationships between classes"></a>Relationships between classes</h3><p>Relationships between classes describe how classes are connected or interact with each other within a system.<br>![[Pasted image 20240507133210.png]]</p><p>Reference:</p><ol><li><a href="https://www.geeksforgeeks.org/unified-modeling-language-uml-class-diagrams/">Class Diagram | Unified Modeling Language (UML)</a></li></ol>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
-    <link href="/2024/07/27/Unnamed%20and%20inline%20namesapces/"/>
-    <url>/2024/07/27/Unnamed%20and%20inline%20namesapces/</url>
-    
-    <content type="html"><![CDATA[<h2 id="Anonymous-namespaces"><a href="#Anonymous-namespaces" class="headerlink" title="Anonymous namespaces"></a>Anonymous namespaces</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">namespace</span> &#123; <span class="hljs-comment">// anonymous namespace</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">foo</span><span class="hljs-params">()</span> </span>&#123; <span class="hljs-comment">// can only be accessed in this file</span><br>&#125;<br>&#125;<br></code></pre></td></tr></table></figure><ul><li>Anonymous namespaces are typically used when you have a lot of content that you want to ensure stays local to a given file.</li><li>Keep <em>program-defined types (what the meaning of  it?)</em> local to the file</li></ul><h2 id="Inline-namespaces"><a href="#Inline-namespaces" class="headerlink" title="Inline namespaces"></a>Inline namespaces</h2><p>An inline namespace is a namespace that is typically used to version content. Much like an unnamed namespace, anything declared inside an inline namespace is considered part of the parent namespace; however, unlike unnamed namespaces, inline namespaces don’t affect linkage.</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">namespace</span> Version1 &#123;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">foo</span><span class="hljs-params">()</span> </span>&#123;&#125;<br>&#125;<br><br><span class="hljs-keyword">inline</span> <span class="hljs-keyword">namespace</span> Version2 &#123;<br><span class="hljs-keyword">namespace</span> &#123;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">foo</span><span class="hljs-params">()</span> </span>&#123;&#125;<br>&#125;<br>&#125;<br><br><span class="hljs-built_in">foo</span>(); <span class="hljs-comment">// call the inline version, equal to Version2::foo();</span><br></code></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p><p>sudo apt install git<br>sudo apt install nodejs<br>sudo apt install npm<br>npm install -g hexo-cli</p><p><a href="https://juejin.cn/post/7064515729298554887">https://juejin.cn/post/7064515729298554887</a></p>]]></content>
     
     
     
@@ -99,7 +98,7 @@
     <link href="/2024/07/27/Untitled/"/>
     <url>/2024/07/27/Untitled/</url>
     
-    <content type="html"><![CDATA[<blockquote><p>[!quote] “In software development, learning is not a big part of the job. <strong>It is the job</strong>.”    – <em>Woody Zuill</em></p></blockquote><h2 id="Areas-of-Application"><a href="#Areas-of-Application" class="headerlink" title="Areas of Application"></a>Areas of Application</h2><p>Operating systems, Compilers, Artificial Intelligence, Image Editing, Web browser, High-Performance Computing, Embedded systems,<br>Web indexing, Scientific Computing, Database, Video Games, Entertainment, Finance</p><h2 id="C-Philosophy"><a href="#C-Philosophy" class="headerlink" title="C++ Philosophy"></a>C++ Philosophy</h2><ul><li><strong>Zero Overhead Principle (zero-cost abstraction)</strong></li><li><strong>Type safety: Statically typed language</strong>: Enforce safety at compile time whenever possible</li><li><strong>Programming model</strong>: compartmentalization</li><li><strong>Predictable runtime</strong></li><li><strong>Low resources</strong></li><li><strong>Well suited for static analysis</strong></li><li><strong>Portability</strong></li></ul><h2 id="The-C-Type-System"><a href="#The-C-Type-System" class="headerlink" title="The C++ Type System"></a>The C++ Type System</h2><p>C++ is a <strong>strong typed</strong> and <strong>statically typed</strong> language.</p><h4 id="Type-Categories"><a href="#Type-Categories" class="headerlink" title="Type Categories"></a>Type Categories</h4><p>![[Pasted image 20240511100226.png]]</p><h4 id="Conversion-Rules"><a href="#Conversion-Rules" class="headerlink" title="Conversion Rules"></a>Conversion Rules</h4><h5 id="Implicit-type-conversion-rules"><a href="#Implicit-type-conversion-rules" class="headerlink" title="Implicit type conversion rules"></a>Implicit type conversion rules</h5>]]></content>
+    <content type="html"><![CDATA[<h2 id="Areas-of-Application"><a href="#Areas-of-Application" class="headerlink" title="Areas of Application"></a>Areas of Application</h2><p>Operating systems, Compilers, Artificial Intelligence, Image Editing, Web browser, High-Performance Computing, Embedded systems,<br>Web indexing, Scientific Computing, Database, Video Games, Entertainment, Finance</p><h2 id="C-Philosophy"><a href="#C-Philosophy" class="headerlink" title="C++ Philosophy"></a>C++ Philosophy</h2><ul><li><strong>Zero Overhead Principle (zero-cost abstraction)</strong></li><li><strong>Type safety: Statically typed language</strong>: Enforce safety at compile time whenever possible</li><li><strong>Programming model</strong>: compartmentalization</li><li><strong>Predictable runtime</strong></li><li><strong>Low resources</strong></li><li><strong>Well suited for static analysis</strong></li><li><strong>Portability</strong></li></ul><h2 id="The-C-Type-System"><a href="#The-C-Type-System" class="headerlink" title="The C++ Type System"></a>The C++ Type System</h2><p>C++ is a <strong>strong typed</strong> and <strong>statically typed</strong> language.</p><h4 id="Type-Categories"><a href="#Type-Categories" class="headerlink" title="Type Categories"></a>Type Categories</h4><p>![[Pasted image 20240511100226.png]]</p><h4 id="Conversion-Rules"><a href="#Conversion-Rules" class="headerlink" title="Conversion Rules"></a>Conversion Rules</h4><h5 id="Implicit-type-conversion-rules"><a href="#Implicit-type-conversion-rules" class="headerlink" title="Implicit type conversion rules"></a>Implicit type conversion rules</h5>]]></content>
     
     
     
@@ -109,10 +108,10 @@
   
   <entry>
     <title></title>
-    <link href="/2024/07/27/Vim%20global%20configuration/"/>
-    <url>/2024/07/27/Vim%20global%20configuration/</url>
+    <link href="/2024/07/27/programming/Placement%20new%20operator%20in%20C++/"/>
+    <url>/2024/07/27/programming/Placement%20new%20operator%20in%20C++/</url>
     
-    <content type="html"><![CDATA[<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs routeros">syntax on<br><span class="hljs-built_in">set</span> showmode<br>filetype indent on<br><span class="hljs-built_in">set</span> number<br><span class="hljs-built_in">set</span> relativenumber<br><span class="hljs-built_in">set</span> <span class="hljs-attribute">tabstop</span>=4<br><span class="hljs-built_in">set</span> cursorline<br><span class="hljs-built_in">set</span> autoindent<br>colorscheme delek<br><span class="hljs-built_in">set</span> <span class="hljs-attribute">guifont</span>=Courier/14<br></code></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p><a href="https://www.geeksforgeeks.org/placement-new-operator-cpp/">https://www.geeksforgeeks.org/placement-new-operator-cpp/</a></p>]]></content>
     
     
     
@@ -121,11 +120,50 @@
   
   
   <entry>
-    <title>Hello World</title>
-    <link href="/2024/07/27/hello-world/"/>
-    <url>/2024/07/27/hello-world/</url>
+    <title></title>
+    <link href="/2024/07/27/programming/Reflection%20System/"/>
+    <url>/2024/07/27/programming/Reflection%20System/</url>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<p>Reference:</p><ol><li><a href="https://preshing.com/20180116/a-primitive-reflection-system-in-cpp-part-1/">A Flexible Reflection System in C++: Part 1</a></li></ol>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2024/07/27/programming/Unified%20Modeling%20Language%20(UML)/"/>
+    <url>/2024/07/27/programming/Unified%20Modeling%20Language%20(UML)/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Class-Diagram"><a href="#Class-Diagram" class="headerlink" title="Class Diagram"></a>Class Diagram</h2><p>Class diagrams are used to visually represent the structure and relationships of classes within a system.</p><blockquote><p>[!TIP]<br>Classes are depicted as boxes, each containing three compartments for the class name, attributes, and methods. Lines connecting classes illustrate associations, showing relationships such as ont-to-one or one-to-many.</p></blockquote><h3 id="UML-Class-Notation"><a href="#UML-Class-Notation" class="headerlink" title="UML Class Notation"></a>UML Class Notation</h3><p>![[Pasted image 20240507104339.png]]</p><p><strong>Visibility notation</strong> indicate the access level of attributes and methods. Common visibility notations include:</p><ul><li>+ for public</li><li>- for private</li><li># for protected</li></ul><p><strong>Parameter directionality</strong> refers to the indication of the flow of information between classes through method parameters. There are three main parameter directionality notations used in class diagrams:</p><ul><li>In(Input)</li><li>Out(Output)</li><li>InOut(Input and Output)</li></ul><h3 id="Relationships-between-classes"><a href="#Relationships-between-classes" class="headerlink" title="Relationships between classes"></a>Relationships between classes</h3><p>Relationships between classes describe how classes are connected or interact with each other within a system.<br>![[Pasted image 20240507133210.png]]</p><p>Reference:</p><ol><li><a href="https://www.geeksforgeeks.org/unified-modeling-language-uml-class-diagrams/">Class Diagram | Unified Modeling Language (UML)</a></li></ol>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2024/07/27/programming/Unnamed%20and%20inline%20namesapces/"/>
+    <url>/2024/07/27/programming/Unnamed%20and%20inline%20namesapces/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Anonymous-namespaces"><a href="#Anonymous-namespaces" class="headerlink" title="Anonymous namespaces"></a>Anonymous namespaces</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">namespace</span> &#123; <span class="hljs-comment">// anonymous namespace</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">foo</span><span class="hljs-params">()</span> </span>&#123; <span class="hljs-comment">// can only be accessed in this file</span><br>&#125;<br>&#125;<br></code></pre></td></tr></table></figure><ul><li>Anonymous namespaces are typically used when you have a lot of content that you want to ensure stays local to a given file.</li><li>Keep <em>program-defined types (what the meaning of  it?)</em> local to the file</li></ul><h2 id="Inline-namespaces"><a href="#Inline-namespaces" class="headerlink" title="Inline namespaces"></a>Inline namespaces</h2><p>An inline namespace is a namespace that is typically used to version content. Much like an unnamed namespace, anything declared inside an inline namespace is considered part of the parent namespace; however, unlike unnamed namespaces, inline namespaces don’t affect linkage.</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">namespace</span> Version1 &#123;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">foo</span><span class="hljs-params">()</span> </span>&#123;&#125;<br>&#125;<br><br><span class="hljs-keyword">inline</span> <span class="hljs-keyword">namespace</span> Version2 &#123;<br><span class="hljs-keyword">namespace</span> &#123;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">foo</span><span class="hljs-params">()</span> </span>&#123;&#125;<br>&#125;<br>&#125;<br><br><span class="hljs-built_in">foo</span>(); <span class="hljs-comment">// call the inline version, equal to Version2::foo();</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2024/07/27/software/detail/CMake/"/>
+    <url>/2024/07/27/software/detail/CMake/</url>
+    
+    <content type="html"><![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">pip install cmake==23232 <span class="hljs-comment"># Check av version</span><br>pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --trusted-host pypi.tuna.tsinghua.edu.cn module<br></code></pre></td></tr></table></figure><p>cmake -S .&#x2F; -B .&#x2F;build&#x2F;<br>cmake –build .&#x2F;build&#x2F; -j8</p>]]></content>
     
     
     
@@ -139,6 +177,19 @@
     <url>/2024/07/27/software/detail/Miniconda/</url>
     
     <content type="html"><![CDATA[<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">wget https://repo.anaconda.com/miniconda/Miniconda3-py310_23.3.1-0-Linux-x86_64.sh<br>bash Miniconda3-latest-Linux-x86_64.sh<br></code></pre></td></tr></table></figure><p>conda install jupyter</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2024/07/27/software/detail/Vim%20global%20configuration/"/>
+    <url>/2024/07/27/software/detail/Vim%20global%20configuration/</url>
+    
+    <content type="html"><![CDATA[<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs routeros">syntax on<br><span class="hljs-built_in">set</span> showmode<br>filetype indent on<br><span class="hljs-built_in">set</span> number<br><span class="hljs-built_in">set</span> relativenumber<br><span class="hljs-built_in">set</span> <span class="hljs-attribute">tabstop</span>=4<br><span class="hljs-built_in">set</span> cursorline<br><span class="hljs-built_in">set</span> autoindent<br>colorscheme delek<br><span class="hljs-built_in">set</span> <span class="hljs-attribute">guifont</span>=Courier/14<br></code></pre></td></tr></table></figure>]]></content>
     
     
     
@@ -174,19 +225,6 @@
   
   <entry>
     <title></title>
-    <link href="/2024/07/27/software/detail/git/"/>
-    <url>/2024/07/27/software/detail/git/</url>
-    
-    <content type="html"><![CDATA[<p>git –version<br>clear # clear screen<br>git config –global user.name “someone” # setting up username<br>git config –global user.email “someone@email” # setting up email<br>git init # initialization of the respository<br>git config [–global] core.autocrlf false # LF: the newline character of Linux and Unix; CRLF: the newline character of Windows<br>git add test.txt<br>git commit -m “comment” test.txt<br>git status</p><h1 id="log-presentation"><a href="#log-presentation" class="headerlink" title="log presentation"></a>log presentation</h1><ul><li>git log # 分页</li><li>git log –pretty&#x3D;oneline</li><li>git log –oneline</li><li>git reflog</li></ul><p>git reset –hard [index] # 版本前进或后退，本地库指针移动的同时，重置暂存区和工作区<br>git reset –mixed [index] # 版本前进或后退，本地库指针移动的同时，重置暂存区，工作区不动<br>git reset –soft [index] # 版本前进或后退，本地库指针移动的同时，暂存区和工作区不动<br>git diff [filename] # 将工作区中的文件和暂存区中文件进行比较<br>git diff # 比较工作区和暂存区中所有文件的差异<br>git branch -v # 查看分支<br>git branch [branch01] # 创建分支<br>git checkout [branch01] # 切换分支<br>git merge [branch01] # 将分支合并到主分支中<br>(master|MERGING) # 合并冲突，解决冲突问题后，git commit -m “解决了冲突问题”<br>git remote -v # 查看别名<br>git remote add [name] [HTTPS] # 远程库起别名<br>git push [name] [master] # 将本地库 master 内容提交到远程库 master 中<br>git clone [HTTPS] # 将远程库中的内容 clone 到本地库<br>git pull [name] master # 远程库的拉取</p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
     <link href="/2024/07/27/software/detail/tecplot2018%20linux/"/>
     <url>/2024/07/27/software/detail/tecplot2018%20linux/</url>
     
@@ -199,11 +237,24 @@
   
   
   <entry>
+    <title></title>
+    <link href="/2024/07/27/software/detail/git/"/>
+    <url>/2024/07/27/software/detail/git/</url>
+    
+    <content type="html"><![CDATA[<p>git –version<br>clear # clear screen<br>git config –global user.name “someone” # setting up username<br>git config –global user.email “someone@email” # setting up email<br>git init # initialization of the respository<br>git config [–global] core.autocrlf false # LF: the newline character of Linux and Unix; CRLF: the newline character of Windows<br>git add test.txt<br>git commit -m “comment” test.txt<br>git status</p><h1 id="log-presentation"><a href="#log-presentation" class="headerlink" title="log presentation"></a>log presentation</h1><ul><li>git log # 分页</li><li>git log –pretty&#x3D;oneline</li><li>git log –oneline</li><li>git reflog</li></ul><p>git reset –hard [index] # 版本前进或后退，本地库指针移动的同时，重置暂存区和工作区<br>git reset –mixed [index] # 版本前进或后退，本地库指针移动的同时，重置暂存区，工作区不动<br>git reset –soft [index] # 版本前进或后退，本地库指针移动的同时，暂存区和工作区不动<br>git diff [filename] # 将工作区中的文件和暂存区中文件进行比较<br>git diff # 比较工作区和暂存区中所有文件的差异<br>git branch -v # 查看分支<br>git branch [branch01] # 创建分支<br>git checkout [branch01] # 切换分支<br>git merge [branch01] # 将分支合并到主分支中<br>(master|MERGING) # 合并冲突，解决冲突问题后，git commit -m “解决了冲突问题”<br>git remote -v # 查看别名<br>git remote add [name] [HTTPS] # 远程库起别名<br>git push [name] [master] # 将本地库 master 内容提交到远程库 master 中<br>git clone [HTTPS] # 将远程库中的内容 clone 到本地库<br>git pull [name] master # 远程库的拉取</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Software Recommendations</title>
     <link href="/2024/07/07/software/Software%20Recommendations/"/>
     <url>/2024/07/07/software/Software%20Recommendations/</url>
     
-    <content type="html"><![CDATA[<ul><li>utools: <a href="https://u.tools/">uTools 官网 - 新一代效率工具平台</a></li><li>tecplot：云图 [[tecplot2018 linux]]</li><li>origin：框图</li><li>endnote：文献管理</li><li>Zotero：文献管理 [[Zotero+Sci-Hub]]</li><li>Mathtype：公式输入</li><li>ANSYS：模拟软件</li><li>Matlab</li><li>格式工厂：视频转换</li><li>Office</li><li>Potplayer：视频播放</li><li>foorbar: <a href="https://www.foobar2000.org/">音乐播放</a></li><li>everything：文件搜索</li><li>Obsidian：日志管理</li><li>git：[[版本控制Git]]</li><li>HPC SDK：OpenACC 编译器<a href="https://developer.nvidia.cn/nvidia-hpc-sdk-219-downloads">NVIDIA HPC SDK 21.9 Downloads | NVIDIA Developer</a></li><li>MobaXterm：终端连接</li><li>Visual Studio Code: [[Visual Studio Code]]</li><li>数学公式识别神器: <a href="https://mathpix.com/">Mathpix Snip</a></li><li>制作系统盘: <a href="https://rufus.ie/zh/">rufus</a></li></ul><ul><li><strong>CPU-Z</strong>: <a href="%5BCPUID%5D(https://www.cpuid.com/)">system information software</a></li><li><strong>IObit Unistaller</strong>: <a href="https://www.iobit.com/en/index.php?s">Clean, Optimize, Speed Up and Secure PC - Freeware Download - IObit</a></li></ul><ul><li>vim</li><li><a href="https://www.zotero.org/support/installation">Zotero</a></li><li>Obsidian</li><li>iTab</li><li><a href="https://code.visualstudio.com/docs/setup/linux">code</a></li><li><a href="https://docs.conda.io/en/latest/miniconda.html#linux-installers">Miniconda</a></li><li>GIMP</li><li><a href="https://inkscape.org/">INKSCAPE</a></li><li>goldendict <code>sudo apt install goldendict</code></li><li>paraview</li><li><a href="https://zhuanlan.zhihu.com/p/519732843">CMake</a></li><li><a href="https://meeting.tencent.com/">Wemeet</a></li><li><a href="https://u.tools/">utools</a></li><li><a href="https://www.doxygen.nl/index.html">Doxygen</a></li><li>Graphviz</li></ul>]]></content>
+    <content type="html"><![CDATA[<ul><li><p>utools: <a href="https://u.tools/">uTools 官网 - 新一代效率工具平台</a></p></li><li><p>tecplot：云图 [[tecplot2018 linux]]</p></li><li><p>origin：框图</p></li><li><p>endnote：文献管理</p></li><li><p>Zotero：文献管理 [[Zotero+Sci-Hub]]</p></li><li><p>Mathtype：公式输入</p></li><li><p>ANSYS：模拟软件</p></li><li><p>Matlab</p></li><li><p>格式工厂：视频转换</p></li><li><p>Office</p></li><li><p>Potplayer：视频播放</p></li><li><p>foorbar: <a href="https://www.foobar2000.org/">音乐播放</a></p></li><li><p>everything：文件搜索</p></li><li><p>Obsidian：日志管理</p></li><li><p>git：[[版本控制Git]]</p></li><li><p>HPC SDK：OpenACC 编译器<a href="https://developer.nvidia.cn/nvidia-hpc-sdk-219-downloads">NVIDIA HPC SDK 21.9 Downloads | NVIDIA Developer</a></p></li><li><p>MobaXterm：终端连接</p></li><li><p>Visual Studio Code: [[Visual Studio Code]]</p></li><li><p>数学公式识别神器: <a href="https://mathpix.com/">Mathpix Snip</a></p></li><li><p>制作系统盘: <a href="https://rufus.ie/zh/">rufus</a></p></li><li><p><strong>CPU-Z</strong>: <a href="%5BCPUID%5D(https://www.cpuid.com/)">system information software</a></p></li><li><p><strong>IObit Unistaller</strong>: <a href="https://www.iobit.com/en/index.php?s">Clean, Optimize, Speed Up and Secure PC - Freeware Download - IObit</a></p></li><li><p>vim</p></li><li><p><a href="https://www.zotero.org/support/installation">Zotero</a></p></li><li><p>Obsidian</p></li><li><p>iTab</p></li><li><p><a href="https://code.visualstudio.com/docs/setup/linux">code</a></p></li><li><p><a href="https://docs.conda.io/en/latest/miniconda.html#linux-installers">Miniconda</a></p></li><li><p>GIMP</p></li><li><p><a href="https://inkscape.org/">INKSCAPE</a></p></li><li><p>goldendict <code>sudo apt install goldendict</code></p></li><li><p>paraview</p></li><li><p><a href="https://zhuanlan.zhihu.com/p/519732843">CMake</a></p></li><li><p><a href="https://meeting.tencent.com/">Wemeet</a></p></li><li><p><a href="https://u.tools/">utools</a></p></li><li><p><a href="https://www.doxygen.nl/index.html">Doxygen</a></p></li><li><p>Graphviz</p></li></ul>]]></content>
     
     
     <categories>
@@ -216,6 +267,56 @@
     <tags>
       
       <tag>software</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Design Patterns</title>
+    <link href="/2024/07/07/programming/design%20pattern/Design%20Patterns/"/>
+    <url>/2024/07/07/programming/design%20pattern/Design%20Patterns/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Decorator-Pattern"><a href="#Decorator-Pattern" class="headerlink" title="Decorator Pattern"></a>Decorator Pattern</h2><p><strong>The Decorator Pattern</strong> attaches additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality.</p><p><img src="/../../../img/obsidian/Pasted%20image%2020240731084134.png"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>programming/design pattern</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>programming</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Docker</title>
+    <link href="/2024/07/07/software/detail/docker/Docker/"/>
+    <url>/2024/07/07/software/detail/docker/Docker/</url>
+    
+    <content type="html"><![CDATA[<p>Docker is an open-source engine that automates the deployment of applications into containers.<br>Docker is designed to enhance consistency by ensuring the environment in which your developers write code matches the environments into which your applications are deployed.</p><h2 id="Install-docker-engine"><a href="#Install-docker-engine" class="headerlink" title="Install docker engine"></a><a href="https://docs.docker.com/engine/install/ubuntu/">Install docker engine</a></h2><h2 id="using-docker-mirrors"><a href="#using-docker-mirrors" class="headerlink" title="using docker mirrors"></a>using docker mirrors</h2><h3 id="1-set-registry-mirror"><a href="#1-set-registry-mirror" class="headerlink" title="1. set registry mirror"></a>1. set registry mirror</h3><p>Supported systems: Ubuntu 16.04+, Debian 8+, and Centos 7+</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo mkdir -p /etc/docker<br>sudo tee /etc/docker/daemon.json &lt;&lt;EOF<br>&#123;<br>    &quot;registry-mirrors&quot;: [<br>        &quot;https://hub.uuuadc.top&quot;,<br>        &quot;https://docker.anyhub.us.kg&quot;,<br>        &quot;https://dockerhub.jobcher.com&quot;,<br>        &quot;https://dockerhub.icu&quot;,<br>        &quot;https://docker.ckyl.me&quot;,<br>        &quot;https://docker.awsl9527.cn&quot;<br>    ]<br>&#125;<br>EOF<br>sudo systemctl daemon-reload<br>sudo systemctl restart docker<br></code></pre></td></tr></table></figure><h3 id="2-using-docker-hub-proxy"><a href="#2-using-docker-hub-proxy" class="headerlink" title="2. using docker-hub proxy"></a>2. using docker-hub proxy</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker pull hub.uuuadc.top/library/jenkins/jenkins<br><span class="hljs-meta prompt_"># </span><span class="language-bash">Note:</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash"><span class="hljs-string">&quot;library&quot;</span> is a special namespace that represents the official mirror.</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">If it<span class="hljs-string">&#x27;s a mirror of a certain user, please replace &quot;library&quot; with the user name.</span></span><br></code></pre></td></tr></table></figure><h2 id="Manage-docker-as-a-non-root-user"><a href="#Manage-docker-as-a-non-root-user" class="headerlink" title="Manage docker as a non-root user"></a><a href="https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user">Manage docker as a non-root user</a></h2><h2 id="Tutorial"><a href="#Tutorial" class="headerlink" title="Tutorial"></a>Tutorial</h2><h3 id="Create-new-containers"><a href="#Create-new-containers" class="headerlink" title="Create new containers"></a>Create new containers</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker run -d --name container_name -p 8080:80 -v /host_dir:/container_dir image_name<br><span class="hljs-meta prompt_"># </span><span class="language-bash">-d:      Tell Docker to detach the container to the background</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">--name:  Name the container</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">-p:      Bind port 80 on the container to port 8080 on the <span class="hljs-built_in">local</span> host</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">-v:      Create a volume <span class="hljs-keyword">in</span> our container from a directory on the host</span><br><br>docker exec -it container_name bash<br><span class="hljs-meta prompt_"># </span><span class="language-bash">-i:      Flag keeps STDIN open from the container</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">-t:      Tell Docker to assign a pseudo-tty to the container</span><br></code></pre></td></tr></table></figure><h3 id="Check"><a href="#Check" class="headerlink" title="Check"></a>Check</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">#</span><span class="language-bash">! Check container</span><br>docker ps<br><span class="hljs-meta prompt_"># </span><span class="language-bash">-a:     Check all container</span><br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">! Check images</span><br>docker images<br></code></pre></td></tr></table></figure><h3 id="Delete"><a href="#Delete" class="headerlink" title="Delete"></a>Delete</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">#</span><span class="language-bash">! Delete container</span><br>docker rm -f container<br><span class="hljs-meta prompt_"># </span><span class="language-bash"><span class="hljs-string">&quot;container&quot;</span> can be conatiner name or ID</span><br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">! Delete image</span><br>docker rmi image_name<br></code></pre></td></tr></table></figure><h3 id="Start-stop-and-restart"><a href="#Start-stop-and-restart" class="headerlink" title="Start, stop, and restart"></a>Start, stop, and restart</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">exit # You&#x27;ll return to the command prompt of your host.<br>docker start   container_name<br>docker stop    container_name<br>docker restart container_name<br></code></pre></td></tr></table></figure><hr><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h2><ol><li><a href="https://ruanyifeng.com/blog/2018/02/docker-tutorial.html">Docker 入门教程</a></li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>software</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>software/Docker</tag>
       
     </tags>
     

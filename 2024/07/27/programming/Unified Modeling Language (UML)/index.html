@@ -16,24 +16,24 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="John Doe">
+  <meta name="author" content="k.ma">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Reference:  A Flexible Reflection System in C++: Part 1">
+    <meta name="description" content="Class DiagramClass diagrams are used to visually represent the structure and relationships of classes within a system.  [!TIP]Classes are depicted as boxes, each containing three compartments for the">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/2024/07/27/Reflection%20System/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Reference:  A Flexible Reflection System in C++: Part 1">
+<meta property="og:title" content="Mutu">
+<meta property="og:url" content="http://mutumini.github.io/2024/07/27/programming/Unified%20Modeling%20Language%20(UML)/index.html">
+<meta property="og:site_name" content="Mutu">
+<meta property="og:description" content="Class DiagramClass diagrams are used to visually represent the structure and relationships of classes within a system.  [!TIP]Classes are depicted as boxes, each containing three compartments for the">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-07-27T09:07:56.192Z">
 <meta property="article:modified_time" content="2024-07-27T09:07:56.192Z">
-<meta property="article:author" content="John Doe">
+<meta property="article:author" content="k.ma">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Hexo</title>
+  <title>Mutu</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -71,7 +71,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"mutumini.github.io","root":"/","version":"1.9.8","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -222,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3 words
+          34 words
         
       </span>
     
@@ -275,9 +275,27 @@
             
               <div class="markdown-body">
                 
-                <p>Reference:</p>
+                <h2 id="Class-Diagram"><a href="#Class-Diagram" class="headerlink" title="Class Diagram"></a>Class Diagram</h2><p>Class diagrams are used to visually represent the structure and relationships of classes within a system.</p>
+<blockquote>
+<p>[!TIP]<br>Classes are depicted as boxes, each containing three compartments for the class name, attributes, and methods. Lines connecting classes illustrate associations, showing relationships such as ont-to-one or one-to-many.</p>
+</blockquote>
+<h3 id="UML-Class-Notation"><a href="#UML-Class-Notation" class="headerlink" title="UML Class Notation"></a>UML Class Notation</h3><p>![[Pasted image 20240507104339.png]]</p>
+<p><strong>Visibility notation</strong> indicate the access level of attributes and methods. Common visibility notations include:</p>
+<ul>
+<li>+ for public</li>
+<li>- for private</li>
+<li># for protected</li>
+</ul>
+<p><strong>Parameter directionality</strong> refers to the indication of the flow of information between classes through method parameters. There are three main parameter directionality notations used in class diagrams:</p>
+<ul>
+<li>In(Input)</li>
+<li>Out(Output)</li>
+<li>InOut(Input and Output)</li>
+</ul>
+<h3 id="Relationships-between-classes"><a href="#Relationships-between-classes" class="headerlink" title="Relationships between classes"></a>Relationships between classes</h3><p>Relationships between classes describe how classes are connected or interact with each other within a system.<br>![[Pasted image 20240507133210.png]]</p>
+<p>Reference:</p>
 <ol>
-<li><a target="_blank" rel="noopener" href="https://preshing.com/20180116/a-primitive-reflection-system-in-cpp-part-1/">A Flexible Reflection System in C++: Part 1</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/unified-modeling-language-uml-class-diagrams/">Class Diagram | Unified Modeling Language (UML)</a></li>
 </ol>
 
                 
@@ -297,13 +315,13 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div></div>
-      <div>http://example.com/2024/07/27/Reflection System/</div>
+      <div>http://mutumini.github.io/2024/07/27/programming/Unified Modeling Language (UML)/</div>
     </div>
     <div class="license-meta">
       
         <div class="license-meta-item">
           <div>Author</div>
-          <div>John Doe</div>
+          <div>k.ma</div>
         </div>
       
       
@@ -341,7 +359,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/07/27/Placement%20new%20operator%20in%20C++/" title="">
+                      <a href="/2024/07/27/programming/Reflection%20System/" title="">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile"></span>
                         <span class="visible-mobile">Previous</span>
@@ -351,7 +369,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/07/27/Unified%20Modeling%20Language%20(UML)/" title="">
+                      <a href="/2024/07/27/programming/Unnamed%20and%20inline%20namesapces/" title="">
                         <span class="hidden-mobile"></span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>

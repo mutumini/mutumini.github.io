@@ -19,22 +19,21 @@
   <meta name="author" content="k.ma">
   <meta name="keywords" content="">
   
-    <meta name="description" content="docker compose install">
+    <meta name="description" content="Anonymous namespaces1234namespace &#123; &#x2F;&#x2F; anonymous namespace	void foo() &#123; &#x2F;&#x2F; can only be accessed in this file	&#125;&#125;   Anonymous namespaces are typically used when you have a lot of con">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Docker Compose">
-<meta property="og:url" content="http://mutumini.github.io/2024/07/29/software/detail/docker/Docker%20compose/index.html">
+<meta property="og:title" content="Mutu">
+<meta property="og:url" content="http://mutumini.github.io/2024/08/15/programming/Unnamed%20and%20inline%20namesapces/index.html">
 <meta property="og:site_name" content="Mutu">
-<meta property="og:description" content="docker compose install">
+<meta property="og:description" content="Anonymous namespaces1234namespace &#123; &#x2F;&#x2F; anonymous namespace	void foo() &#123; &#x2F;&#x2F; can only be accessed in this file	&#125;&#125;   Anonymous namespaces are typically used when you have a lot of con">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-07-29T01:00:00.000Z">
-<meta property="article:modified_time" content="2024-08-03T02:14:09.678Z">
+<meta property="article:published_time" content="2024-08-15T13:12:48.360Z">
+<meta property="article:modified_time" content="2024-07-27T09:07:56.192Z">
 <meta property="article:author" content="k.ma">
-<meta property="article:tag" content="software&#x2F;Docker">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Docker Compose - Mutu</title>
+  <title>Mutu</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -200,7 +199,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">Docker Compose</span>
+            <span id="subtitle"></span>
           
         </div>
 
@@ -211,8 +210,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-07-29 09:00" pubdate>
-          July 29, 2024 am
+        <time datetime="2024-08-15 21:12" pubdate>
+          August 15, 2024 pm
         </time>
       </span>
     
@@ -223,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1 words
+          37 words
         
       </span>
     
@@ -271,12 +270,19 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Docker Compose</h1>
+            <h1 id="seo-header"></h1>
             
             
               <div class="markdown-body">
                 
-                <p>docker compose install</p>
+                <h2 id="Anonymous-namespaces"><a href="#Anonymous-namespaces" class="headerlink" title="Anonymous namespaces"></a>Anonymous namespaces</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">namespace</span> &#123; <span class="hljs-comment">// anonymous namespace</span><br>	<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">foo</span><span class="hljs-params">()</span> </span>&#123; <span class="hljs-comment">// can only be accessed in this file</span><br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>Anonymous namespaces are typically used when you have a lot of content that you want to ensure stays local to a given file.</li>
+<li>Keep <em>program-defined types (what the meaning of  it?)</em> local to the file</li>
+</ul>
+<h2 id="Inline-namespaces"><a href="#Inline-namespaces" class="headerlink" title="Inline namespaces"></a>Inline namespaces</h2><p>An inline namespace is a namespace that is typically used to version content. Much like an unnamed namespace, anything declared inside an inline namespace is considered part of the parent namespace; however, unlike unnamed namespaces, inline namespaces don’t affect linkage.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">namespace</span> Version1 &#123;<br>	<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">foo</span><span class="hljs-params">()</span> </span>&#123;&#125;<br>&#125;<br><br><span class="hljs-keyword">inline</span> <span class="hljs-keyword">namespace</span> Version2 &#123;<br>	<span class="hljs-keyword">namespace</span> &#123;<br>		<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">foo</span><span class="hljs-params">()</span> </span>&#123;&#125;<br>	&#125;<br>&#125;<br><br><span class="hljs-built_in">foo</span>(); <span class="hljs-comment">// call the inline version, equal to Version2::foo();</span><br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -285,34 +291,6 @@
             <div>
               <div class="post-metas my-3">
   
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/software/" class="category-chain-item">software</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
-  
-  
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/software-Docker/" class="print-no-link">#software/Docker</a>
-      
-    </div>
   
 </div>
 
@@ -322,8 +300,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Docker Compose</div>
-      <div>http://mutumini.github.io/2024/07/29/software/detail/docker/Docker compose/</div>
+      <div></div>
+      <div>http://mutumini.github.io/2024/08/15/programming/Unnamed and inline namesapces/</div>
     </div>
     <div class="license-meta">
       
@@ -335,7 +313,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>July 29, 2024</div>
+          <div>August 15, 2024</div>
         </div>
       
       
@@ -367,7 +345,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/08/15/software/detail/Zotero+Sci-Hub/" title="">
+                      <a href="/2024/08/15/programming/Unified%20Modeling%20Language%20(UML)/" title="">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile"></span>
                         <span class="visible-mobile">Previous</span>
@@ -377,8 +355,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/07/07/software/Software%20Recommendations/" title="Software Recommendations">
-                        <span class="hidden-mobile">Software Recommendations</span>
+                      <a href="/2024/08/15/software/detail/Jenkins/" title="">
+                        <span class="hidden-mobile"></span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

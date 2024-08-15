@@ -19,22 +19,21 @@
   <meta name="author" content="k.ma">
   <meta name="keywords" content="">
   
-    <meta name="description" content="docker compose install">
+    <meta name="description" content="Variadic templates123456789void print() &#123;&#125;template &lt;typename T, typename... Types&gt;void print(const T&amp; firstArg, const Types&amp;... args) &#123;	std::cout &lt;&lt; firstArg &lt;&amp;lt">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Docker Compose">
-<meta property="og:url" content="http://mutumini.github.io/2024/07/29/software/detail/docker/Docker%20compose/index.html">
+<meta property="og:title" content="Mutu">
+<meta property="og:url" content="http://mutumini.github.io/2024/08/15/programming/C++%20Standard%20Template%20Library/index.html">
 <meta property="og:site_name" content="Mutu">
-<meta property="og:description" content="docker compose install">
+<meta property="og:description" content="Variadic templates123456789void print() &#123;&#125;template &lt;typename T, typename... Types&gt;void print(const T&amp; firstArg, const Types&amp;... args) &#123;	std::cout &lt;&lt; firstArg &lt;&amp;lt">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-07-29T01:00:00.000Z">
-<meta property="article:modified_time" content="2024-08-03T02:14:09.678Z">
+<meta property="article:published_time" content="2024-08-15T13:12:48.360Z">
+<meta property="article:modified_time" content="2024-08-10T08:38:29.518Z">
 <meta property="article:author" content="k.ma">
-<meta property="article:tag" content="software&#x2F;Docker">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Docker Compose - Mutu</title>
+  <title>Mutu</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -200,7 +199,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">Docker Compose</span>
+            <span id="subtitle"></span>
           
         </div>
 
@@ -211,8 +210,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-07-29 09:00" pubdate>
-          July 29, 2024 am
+        <time datetime="2024-08-15 21:12" pubdate>
+          August 15, 2024 pm
         </time>
       </span>
     
@@ -223,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1 words
+          240 words
         
       </span>
     
@@ -234,7 +233,7 @@
         
         
         
-          1 mins
+          3 mins
         
       </span>
     
@@ -271,13 +270,26 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Docker Compose</h1>
+            <h1 id="seo-header"></h1>
             
             
               <div class="markdown-body">
                 
-                <p>docker compose install</p>
+                <h2 id="Variadic-templates"><a href="#Variadic-templates" class="headerlink" title="Variadic templates"></a>Variadic templates</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">print</span><span class="hljs-params">()</span> </span>&#123;&#125;<br><br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span>... Types&gt;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-type">const</span> T&amp; firstArg, <span class="hljs-type">const</span> Types&amp;... args)</span> </span>&#123;<br>	std::cout &lt;&lt; firstArg &lt;&lt; std::endl;<br>	<span class="hljs-built_in">print</span>(args...);<br>&#125;<br><span class="hljs-comment">// Inside variadic templates, sizeof...(args) yields the number of arguments.</span><br><span class="hljs-built_in">print</span>(<span class="hljs-number">7.5</span>, <span class="hljs-string">&quot;hello&quot;</span>, <span class="hljs-built_in">bitset</span>&lt;<span class="hljs-number">16</span>&gt;(<span class="hljs-number">377</span>), <span class="hljs-number">42</span>);<br></code></pre></td></tr></table></figure>
 
+<ul>
+<li>template parameters pack</li>
+<li>function parameter types pack</li>
+<li>function parameters pack</li>
+</ul>
+<h2 id="auto"><a href="#auto" class="headerlink" title="auto"></a>auto</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs cpp">list&lt;string&gt; c;<br>list&lt;string&gt;::iterator ite;<br>ite = <span class="hljs-built_in">find</span>(c.<span class="hljs-built_in">begin</span>(), c.<span class="hljs-built_in">end</span>(), target);<br><span class="hljs-keyword">auto</span> ite1 = <span class="hljs-built_in">find</span>(c.<span class="hljs-built_in">begin</span>(), c.<span class="hljs-built_in">end</span>(), target);<br><br><span class="hljs-keyword">auto</span> ite2; <span class="hljs-comment">// ERROR</span><br>ite2 = <span class="hljs-built_in">find</span>(c.<span class="hljs-built_in">begin</span>(), c.<span class="hljs-built_in">end</span>(), target);<br></code></pre></td></tr></table></figure>
+
+<h2 id="ranged-base-for"><a href="#ranged-base-for" class="headerlink" title="ranged-base for"></a>ranged-base for</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">for</span> (decl : coll) &#123;<br>	statement<br>&#125;<br><br>vector&lt;<span class="hljs-type">double</span>&gt; vec;<br><br><span class="hljs-comment">// Pass by value</span><br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> elem : vec) &#123;<br>	std::cout &lt;&lt; elem &lt;&lt; std::endl;<br>&#125;<br><br><span class="hljs-comment">// Pass by reference</span><br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span>&amp; elem: vec) &#123;<br>	elem *= <span class="hljs-number">3</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">int</span> x = <span class="hljs-number">0</span>;<br><span class="hljs-type">int</span>&amp; r = x;  <span class="hljs-comment">// r is a reference to x</span><br><span class="hljs-type">int</span>* p = &amp;x; <span class="hljs-comment">// r is a pointer to x</span><br><span class="hljs-type">int</span> x2 = <span class="hljs-number">5</span>;<br>r = x2;<br><span class="hljs-type">int</span>&amp; r2 = r;<br><br><span class="hljs-comment">// sizeof(r) == sizeof(x)</span><br><span class="hljs-comment">// &amp;x == &amp;r</span><br><span class="hljs-comment">// 虽然object和其reference的大小相同，地址也相同（全都是假象）</span><br></code></pre></td></tr></table></figure>
+<h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">func1</span><span class="hljs-params">(Class* pobj)</span> </span>&#123;obj-&gt;<span class="hljs-built_in">method</span>();&#125;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">func2</span><span class="hljs-params">(Class  obj )</span> </span>&#123;obj.<span class="hljs-built_in">method</span>(); &#125;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">func3</span><span class="hljs-params">(Class&amp; obj )</span> </span>&#123;obj.<span class="hljs-built_in">method</span>(); &#125;<br><br>Class obj;<br><span class="hljs-built_in">func1</span>(&amp;obj);<br><span class="hljs-built_in">func2</span>(obj);<br><span class="hljs-built_in">func3</span>(obj);<br></code></pre></td></tr></table></figure>
+<p>reference通常不用于声明变量，而用于参数类型（parameters type）和返回类型（return type）的描述。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">// 以下被视为“same signature”：</span><br><span class="hljs-function"><span class="hljs-type">double</span> <span class="hljs-title">imag</span><span class="hljs-params">(<span class="hljs-type">const</span> <span class="hljs-type">double</span>&amp; im)</span> </span>&#123;&#125;<br><span class="hljs-function"><span class="hljs-type">double</span> <span class="hljs-title">imag</span><span class="hljs-params">(<span class="hljs-type">const</span> <span class="hljs-type">double</span>  im)</span> </span>&#123;&#125; <span class="hljs-comment">// ERROR: Ambiguity</span><br><span class="hljs-comment">// 其中imag(type obj) const是signature</span><br></code></pre></td></tr></table></figure>
                 
               </div>
             
@@ -285,34 +297,6 @@
             <div>
               <div class="post-metas my-3">
   
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/software/" class="category-chain-item">software</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
-  
-  
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/software-Docker/" class="print-no-link">#software/Docker</a>
-      
-    </div>
   
 </div>
 
@@ -322,8 +306,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Docker Compose</div>
-      <div>http://mutumini.github.io/2024/07/29/software/detail/docker/Docker compose/</div>
+      <div></div>
+      <div>http://mutumini.github.io/2024/08/15/programming/C++ Standard Template Library/</div>
     </div>
     <div class="license-meta">
       
@@ -335,7 +319,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>July 29, 2024</div>
+          <div>August 15, 2024</div>
         </div>
       
       
@@ -367,7 +351,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/08/15/software/detail/Zotero+Sci-Hub/" title="">
+                      <a href="/2024/08/15/software/detail/WXWork%20of%20Ubuntu/" title="">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile"></span>
                         <span class="visible-mobile">Previous</span>
@@ -377,8 +361,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/07/07/software/Software%20Recommendations/" title="Software Recommendations">
-                        <span class="hidden-mobile">Software Recommendations</span>
+                      <a href="/2024/08/15/programming/Template/" title="">
+                        <span class="hidden-mobile"></span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

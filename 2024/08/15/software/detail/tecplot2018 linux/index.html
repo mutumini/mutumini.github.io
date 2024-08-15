@@ -19,22 +19,21 @@
   <meta name="author" content="k.ma">
   <meta name="keywords" content="">
   
-    <meta name="description" content="docker compose install">
+    <meta name="description" content="Installationchmod +x tecplot360ex2018r1_linux64.sh.&#x2F;tecplot360ex2018r1_linux64.shAdd 127.0.0.1 download.tecplot.com to your hosts file, located \etc\hosts ErrorTecplot 运行报错:.&#x2F;tec360-bin: symbol l">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Docker Compose">
-<meta property="og:url" content="http://mutumini.github.io/2024/07/29/software/detail/docker/Docker%20compose/index.html">
+<meta property="og:title" content="Mutu">
+<meta property="og:url" content="http://mutumini.github.io/2024/08/15/software/detail/tecplot2018%20linux/index.html">
 <meta property="og:site_name" content="Mutu">
-<meta property="og:description" content="docker compose install">
+<meta property="og:description" content="Installationchmod +x tecplot360ex2018r1_linux64.sh.&#x2F;tecplot360ex2018r1_linux64.shAdd 127.0.0.1 download.tecplot.com to your hosts file, located \etc\hosts ErrorTecplot 运行报错:.&#x2F;tec360-bin: symbol l">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-07-29T01:00:00.000Z">
-<meta property="article:modified_time" content="2024-08-03T02:14:09.678Z">
+<meta property="article:published_time" content="2024-08-15T13:12:48.360Z">
+<meta property="article:modified_time" content="2024-07-27T09:07:56.192Z">
 <meta property="article:author" content="k.ma">
-<meta property="article:tag" content="software&#x2F;Docker">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Docker Compose - Mutu</title>
+  <title>Mutu</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -200,7 +199,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">Docker Compose</span>
+            <span id="subtitle"></span>
           
         </div>
 
@@ -211,8 +210,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-07-29 09:00" pubdate>
-          July 29, 2024 am
+        <time datetime="2024-08-15 21:12" pubdate>
+          August 15, 2024 pm
         </time>
       </span>
     
@@ -223,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1 words
+          260 words
         
       </span>
     
@@ -234,7 +233,7 @@
         
         
         
-          1 mins
+          3 mins
         
       </span>
     
@@ -271,12 +270,18 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Docker Compose</h1>
+            <h1 id="seo-header"></h1>
             
             
               <div class="markdown-body">
                 
-                <p>docker compose install</p>
+                <h1 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h1><p>chmod +x tecplot360ex2018r1_linux64.sh<br>.&#x2F;tecplot360ex2018r1_linux64.sh<br>Add <code>127.0.0.1 download.tecplot.com</code> to your hosts file, located <code>\etc\hosts</code></p>
+<h1 id="Error"><a href="#Error" class="headerlink" title="Error"></a>Error</h1><p>Tecplot 运行报错:<br><code>./tec360-bin: symbol lookup error: /lib64/libfontconfig.so.1: undefined symbol: FT_Done_MM_Var</code><br>原因<br>tecplot 安装目录中的 tecplot360ex&#x2F;bin&#x2F;libfreetype.so.6 动态库版本低于 Fedora32&#x2F;33 系统中的 libfreetype.so.6 动态库版本，导致系统启动 tecplot 时找不到低版本动态库中定义的变量 FT_Done_MM_Var<br>Fedora32&#x2F;33 系统中的 libGL.so 动态库的版本过高，与 tecplot2016&#x2F;2017 运行所需的 libGL.so 版本不匹配。<br>解决方法<br>首先，<strong>删除 tecplot 安装目录中的 tecplot360ex&#x2F;bin&#x2F;libfreetype.so.6 动态库</strong><br>其次，由于 tecplot 安装目录里有自带的与 tecplot 相匹配的 libGL.so，该库位于 tecplotex360&#x2F;bin&#x2F;mesa 中，因此只需将 tecplot 安装目录下的 tecplotex360&#x2F;bin&#x2F;mesa 路径加入到 Linux 系统的动态库路径 LD_LIBRARY_PATH 中，<strong>即在~&#x2F;.bashrc 配置文件中加入如下代码<code>export LD_LIBRARY_PATH=$HOME/tecplotex/bin/mesa:$LD_LIBRARY_PATH</code></strong></p>
+<h1 id="Run"><a href="#Run" class="headerlink" title="Run"></a>Run</h1><p>write the code to <code>~/.bashrc</code></p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-built_in">export</span> <span class="hljs-attribute">PATH</span>=<span class="hljs-string">&quot;/usr/local/tecplot2018/360ex_2018r1/bin:<span class="hljs-variable">$PATH</span>&quot;</span><br><span class="hljs-built_in">export</span> <span class="hljs-attribute">TECPHYFILE</span>=<span class="hljs-variable">$HOME</span>/.tecplot.phy<br><span class="hljs-built_in">export</span> <span class="hljs-attribute">LD_LIBRARY_PATH</span>=<span class="hljs-string">&quot;/usr/local/tecplot2018360ex_2018r1/bin:<span class="hljs-variable">$LD_LIBRARY_PATH</span>&quot;</span><br><span class="hljs-built_in">export</span> <span class="hljs-attribute">LD_LIBRARY_PATH</span>=<span class="hljs-string">&quot;/usr/local/tecplot2018360ex_2018r1/bin/mesa:<span class="hljs-variable">$LD_LIBRARY_PATH</span>&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>Copy rlm folder to desired place<code>./rlm</code></p>
+<p><code>tec360 -mesa</code><br>When asked for license choose “Network license”<br>and give “License server name”: localhost or <code>127.0.0.1</code><br>and “Port number” <code>5053</code><br><strong>In order for application working u must have rlm.exe running as long work with it.</strong></p>
 
                 
               </div>
@@ -285,34 +290,6 @@
             <div>
               <div class="post-metas my-3">
   
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/software/" class="category-chain-item">software</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
-  
-  
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/software-Docker/" class="print-no-link">#software/Docker</a>
-      
-    </div>
   
 </div>
 
@@ -322,8 +299,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Docker Compose</div>
-      <div>http://mutumini.github.io/2024/07/29/software/detail/docker/Docker compose/</div>
+      <div></div>
+      <div>http://mutumini.github.io/2024/08/15/software/detail/tecplot2018 linux/</div>
     </div>
     <div class="license-meta">
       
@@ -335,7 +312,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>July 29, 2024</div>
+          <div>August 15, 2024</div>
         </div>
       
       
@@ -367,7 +344,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/08/15/software/detail/Zotero+Sci-Hub/" title="">
+                      <a href="/2024/08/15/software/detail/git/" title="">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile"></span>
                         <span class="visible-mobile">Previous</span>
@@ -377,8 +354,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/07/07/software/Software%20Recommendations/" title="Software Recommendations">
-                        <span class="hidden-mobile">Software Recommendations</span>
+                      <a href="/2024/08/15/software/detail/docker/docker-compose/" title="">
+                        <span class="hidden-mobile"></span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

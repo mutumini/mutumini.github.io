@@ -19,21 +19,26 @@
   <meta name="author" content="k.ma">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Partial specialization个数的偏123template &lt;typename T, typename Alloc&#x3D;...&gt; class vector &#123; &#125;;template &lt;typename Alloc&#x3D;...&gt; class vecotr&lt;bool, Alloc&gt; &#123; &#125;; 范围的偏12345temp">
+    <meta name="description" content="InheritanceBase class的dtor必须是virtual，不然会出现undefined behavior。子类的构造由内而外，先调用基类的构造函数，然后执行自己的。子类的析构由外而内，先执行自己的，然后调用基类的析构函数。 12Derived::Derived(...) &#x2F;*: Base()*&#x2F; &#123;...&#125;Derived::~Derived() &#123; .">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mutu">
-<meta property="og:url" content="http://mutumini.github.io/2024/08/15/programming/Template/index.html">
+<meta property="og:title" content="Object Model">
+<meta property="og:url" content="http://mutumini.github.io/2024/08/15/programming/C++/Object%20Model/index.html">
 <meta property="og:site_name" content="Mutu">
-<meta property="og:description" content="Partial specialization个数的偏123template &lt;typename T, typename Alloc&#x3D;...&gt; class vector &#123; &#125;;template &lt;typename Alloc&#x3D;...&gt; class vecotr&lt;bool, Alloc&gt; &#123; &#125;; 范围的偏12345temp">
+<meta property="og:description" content="InheritanceBase class的dtor必须是virtual，不然会出现undefined behavior。子类的构造由内而外，先调用基类的构造函数，然后执行自己的。子类的析构由外而内，先执行自己的，然后调用基类的析构函数。 12Derived::Derived(...) &#x2F;*: Base()*&#x2F; &#123;...&#125;Derived::~Derived() &#123; .">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-08-15T13:12:48.360Z">
-<meta property="article:modified_time" content="2024-08-10T02:12:12.378Z">
+<meta property="og:image" content="http://mutumini.github.io/img/obsidian/Pasted%20image%2020240815213836.png">
+<meta property="og:image" content="http://mutumini.github.io/img/obsidian/Pasted%20image%2020240815215342.png">
+<meta property="og:image" content="http://mutumini.github.io/img/obsidian/Pasted%20image%2020240815221603.png">
+<meta property="article:published_time" content="2024-08-15T13:00:00.000Z">
+<meta property="article:modified_time" content="2024-08-15T14:16:05.326Z">
 <meta property="article:author" content="k.ma">
+<meta property="article:tag" content="programming">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://mutumini.github.io/img/obsidian/Pasted%20image%2020240815213836.png">
   
   
   
-  <title>Mutu</title>
+  <title>Object Model - Mutu</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +204,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle"></span>
+            <span id="subtitle">Object Model</span>
           
         </div>
 
@@ -210,7 +215,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-08-15 21:12" pubdate>
+        <time datetime="2024-08-15 21:00" pubdate>
           August 15, 2024 pm
         </time>
       </span>
@@ -222,7 +227,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          71 words
+          211 words
         
       </span>
     
@@ -233,7 +238,7 @@
         
         
         
-          1 mins
+          2 mins
         
       </span>
     
@@ -270,15 +275,17 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header"></h1>
+            <h1 id="seo-header">Object Model</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="Partial-specialization"><a href="#Partial-specialization" class="headerlink" title="Partial specialization"></a>Partial specialization</h2><h3 id="个数的偏"><a href="#个数的偏" class="headerlink" title="个数的偏"></a>个数的偏</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> Alloc=...&gt; <span class="hljs-keyword">class</span> vector &#123; &#125;;<br><br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> Alloc=...&gt; <span class="hljs-keyword">class</span> vecotr&lt;<span class="hljs-type">bool</span>, Alloc&gt; &#123; &#125;;<br></code></pre></td></tr></table></figure>
-<h3 id="范围的偏"><a href="#范围的偏" class="headerlink" title="范围的偏"></a>范围的偏</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt; <span class="hljs-keyword">class</span> <span class="hljs-title class_">Foo</span> &#123; &#125;;<br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> U&gt; <span class="hljs-keyword">class</span> <span class="hljs-title class_">Foo</span>&lt;T*&gt; &#123; &#125;;<br><br>Foo&lt;<span class="hljs-type">int</span>&gt; foo0;<br>Foo&lt;<span class="hljs-type">int</span>*&gt; foo1;<br></code></pre></td></tr></table></figure>
-
-<h2 id="Template-template-parameter"><a href="#Template-template-parameter" class="headerlink" title="Template template parameter"></a>Template template parameter</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> U&gt; <span class="hljs-keyword">class</span> <span class="hljs-title class_">Container</span>&gt;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Foo</span> &#123;<br>	Container&lt;T&gt; c;<br>&#125;;<br></code></pre></td></tr></table></figure>
+                <h2 id="Inheritance"><a href="#Inheritance" class="headerlink" title="Inheritance"></a>Inheritance</h2><p><img src="/../../../img/obsidian/Pasted%20image%2020240815213836.png" srcset="/img/loading.gif" lazyload><br>Base class的dtor必须是virtual，不然会出现undefined behavior。<br>子类的构造<strong>由内而外</strong>，先调用基类的构造函数，然后执行自己的。<br>子类的析构<strong>由外而内</strong>，先执行自己的，然后调用基类的析构函数。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp">Derived::<span class="hljs-built_in">Derived</span>(...) <span class="hljs-comment">/*: Base()*/</span> &#123;...&#125;<br>Derived::~<span class="hljs-built_in">Derived</span>() &#123; ... <span class="hljs-comment">/*~Base()*/</span> &#125;<br></code></pre></td></tr></table></figure>
+<h2 id="Composition"><a href="#Composition" class="headerlink" title="Composition"></a>Composition</h2><p><img src="/../../../img/obsidian/Pasted%20image%2020240815215342.png" srcset="/img/loading.gif" lazyload><br>Container的构造<strong>由内而外</strong>，先调用Component的构造函数，然后执行自己的。<br>Container的析构<strong>由外而内</strong>，先执行自己的，然后调用Component的析构函数。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp">Container::<span class="hljs-built_in">Container</span>(...) <span class="hljs-comment">/*: Component()*/</span> &#123;...&#125;<br>Container::~<span class="hljs-built_in">Container</span>() &#123; ... <span class="hljs-comment">/*~Component()*/</span> &#125;<br></code></pre></td></tr></table></figure>
+<h2 id="Inheritance-Composition"><a href="#Inheritance-Composition" class="headerlink" title="Inheritance+Composition"></a>Inheritance+Composition</h2><p><img src="/../../../img/obsidian/Pasted%20image%2020240815221603.png" srcset="/img/loading.gif" lazyload><br>构造<strong>由内而外</strong>，先调用基类的构造函数，然后调用Component的构造函数，然后执行自己的。<br>析构<strong>由外而内</strong>，先执行自己的，然后调用Component的析构函数，然后调用基类的析构函数。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp">Derived::<span class="hljs-built_in">Derived</span>(...) <span class="hljs-comment">/*: Base(), Component()*/</span> &#123;...&#125;<br>Derived::~<span class="hljs-built_in">Derived</span>() &#123; ... <span class="hljs-comment">/*~Component() ~Base()*/</span> &#125;<br></code></pre></td></tr></table></figure>
                 
               </div>
             
@@ -286,6 +293,41 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/programming/" class="category-chain-item">programming</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/programming/C/" class="category-chain-item">C++</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/programming/" class="print-no-link">#programming</a>
+      
+    </div>
   
 </div>
 
@@ -295,8 +337,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div></div>
-      <div>http://mutumini.github.io/2024/08/15/programming/Template/</div>
+      <div>Object Model</div>
+      <div>http://mutumini.github.io/2024/08/15/programming/C++/Object Model/</div>
     </div>
     <div class="license-meta">
       
@@ -340,7 +382,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/08/15/programming/C++%20Standard%20Template%20Library/" title="">
+                      <a href="/2024/08/15/software/detail/Zotero+Sci-Hub/" title="">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile"></span>
                         <span class="visible-mobile">Previous</span>
@@ -350,8 +392,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/08/15/programming/Placement%20new%20operator%20in%20C++/" title="">
-                        <span class="hidden-mobile"></span>
+                      <a href="/2024/08/15/programming/C++/Template/" title="Template">
+                        <span class="hidden-mobile">Template</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

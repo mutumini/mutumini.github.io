@@ -21,19 +21,20 @@
   
     <meta name="description" content="Variadic templates123456789void print() &#123;&#125;template &lt;typename T, typename... Types&gt;void print(const T&amp; firstArg, const Types&amp;... args) &#123;	std::cout &lt;&lt; firstArg &lt;&amp;lt">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mutu">
-<meta property="og:url" content="http://mutumini.github.io/2024/08/15/programming/C++%20Standard%20Template%20Library/index.html">
+<meta property="og:title" content="C++ Standard Library">
+<meta property="og:url" content="http://mutumini.github.io/2024/07/07/programming/C++/C++%20Standard%20Library/index.html">
 <meta property="og:site_name" content="Mutu">
 <meta property="og:description" content="Variadic templates123456789void print() &#123;&#125;template &lt;typename T, typename... Types&gt;void print(const T&amp; firstArg, const Types&amp;... args) &#123;	std::cout &lt;&lt; firstArg &lt;&amp;lt">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-08-15T13:12:48.360Z">
-<meta property="article:modified_time" content="2024-08-10T08:38:29.518Z">
+<meta property="article:published_time" content="2024-07-07T01:00:00.000Z">
+<meta property="article:modified_time" content="2024-08-15T13:20:43.440Z">
 <meta property="article:author" content="k.ma">
+<meta property="article:tag" content="programming">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Mutu</title>
+  <title>C++ Standard Library - Mutu</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +200,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle"></span>
+            <span id="subtitle">C++ Standard Library</span>
           
         </div>
 
@@ -210,8 +211,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-08-15 21:12" pubdate>
-          August 15, 2024 pm
+        <time datetime="2024-07-07 09:00" pubdate>
+          July 7, 2024 am
         </time>
       </span>
     
@@ -270,7 +271,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header"></h1>
+            <h1 id="seo-header">C++ Standard Library</h1>
             
             
               <div class="markdown-body">
@@ -287,9 +288,12 @@
 <h2 id="ranged-base-for"><a href="#ranged-base-for" class="headerlink" title="ranged-base for"></a>ranged-base for</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">for</span> (decl : coll) &#123;<br>	statement<br>&#125;<br><br>vector&lt;<span class="hljs-type">double</span>&gt; vec;<br><br><span class="hljs-comment">// Pass by value</span><br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> elem : vec) &#123;<br>	std::cout &lt;&lt; elem &lt;&lt; std::endl;<br>&#125;<br><br><span class="hljs-comment">// Pass by reference</span><br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span>&amp; elem: vec) &#123;<br>	elem *= <span class="hljs-number">3</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h2 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">int</span> x = <span class="hljs-number">0</span>;<br><span class="hljs-type">int</span>&amp; r = x;  <span class="hljs-comment">// r is a reference to x</span><br><span class="hljs-type">int</span>* p = &amp;x; <span class="hljs-comment">// r is a pointer to x</span><br><span class="hljs-type">int</span> x2 = <span class="hljs-number">5</span>;<br>r = x2;<br><span class="hljs-type">int</span>&amp; r2 = r;<br><br><span class="hljs-comment">// sizeof(r) == sizeof(x)</span><br><span class="hljs-comment">// &amp;x == &amp;r</span><br><span class="hljs-comment">// 虽然object和其reference的大小相同，地址也相同（全都是假象）</span><br></code></pre></td></tr></table></figure>
+
 <h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">func1</span><span class="hljs-params">(Class* pobj)</span> </span>&#123;obj-&gt;<span class="hljs-built_in">method</span>();&#125;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">func2</span><span class="hljs-params">(Class  obj )</span> </span>&#123;obj.<span class="hljs-built_in">method</span>(); &#125;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">func3</span><span class="hljs-params">(Class&amp; obj )</span> </span>&#123;obj.<span class="hljs-built_in">method</span>(); &#125;<br><br>Class obj;<br><span class="hljs-built_in">func1</span>(&amp;obj);<br><span class="hljs-built_in">func2</span>(obj);<br><span class="hljs-built_in">func3</span>(obj);<br></code></pre></td></tr></table></figure>
-<p>reference通常不用于声明变量，而用于参数类型（parameters type）和返回类型（return type）的描述。</p>
+
+<p>reference 通常不用于声明变量，而用于参数类型（parameters type）和返回类型（return type）的描述。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">// 以下被视为“same signature”：</span><br><span class="hljs-function"><span class="hljs-type">double</span> <span class="hljs-title">imag</span><span class="hljs-params">(<span class="hljs-type">const</span> <span class="hljs-type">double</span>&amp; im)</span> </span>&#123;&#125;<br><span class="hljs-function"><span class="hljs-type">double</span> <span class="hljs-title">imag</span><span class="hljs-params">(<span class="hljs-type">const</span> <span class="hljs-type">double</span>  im)</span> </span>&#123;&#125; <span class="hljs-comment">// ERROR: Ambiguity</span><br><span class="hljs-comment">// 其中imag(type obj) const是signature</span><br></code></pre></td></tr></table></figure>
+
                 
               </div>
             
@@ -297,6 +301,41 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/programming/" class="category-chain-item">programming</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/programming/C/" class="category-chain-item">C++</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/programming/" class="print-no-link">#programming</a>
+      
+    </div>
   
 </div>
 
@@ -306,8 +345,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div></div>
-      <div>http://mutumini.github.io/2024/08/15/programming/C++ Standard Template Library/</div>
+      <div>C++ Standard Library</div>
+      <div>http://mutumini.github.io/2024/07/07/programming/C++/C++ Standard Library/</div>
     </div>
     <div class="license-meta">
       
@@ -319,7 +358,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>August 15, 2024</div>
+          <div>July 7, 2024</div>
         </div>
       
       
@@ -351,9 +390,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/08/15/software/detail/WXWork%20of%20Ubuntu/" title="">
+                      <a href="/2024/07/07/software/Software%20Recommendations/" title="Software Recommendations">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile"></span>
+                        <span class="hidden-mobile">Software Recommendations</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -361,8 +400,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/08/15/programming/Template/" title="">
-                        <span class="hidden-mobile"></span>
+                      <a href="/2024/07/07/programming/design%20pattern/Design%20Patterns/" title="Design Patterns">
+                        <span class="hidden-mobile">Design Patterns</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
